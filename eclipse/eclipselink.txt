@@ -1,0 +1,1 @@
+D:\DEV\eclipse-neon\eclipse\eclipse.exe -data F:\DEV\DEV-eclipse-neon-rocketmq\ws -vm D:\DEV\jdk1.8.0_112\bin\javaw.exe -Vmargs -Xms768m -Xmx768m

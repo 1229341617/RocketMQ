@@ -1,0 +1,16 @@
+package com.limao.rocketmq.proconsumer;
+
+import org.apache.rocketmq.client.exception.MQClientException;
+import org.apache.rocketmq.client.producer.DefaultMQProducer;
+
+public class SyncProducer {
+	
+	public static void main(String[] args) throws MQClientException {
+		final DefaultMQProducer producer = new DefaultMQProducer("test_producer");
+		//设置NameServer地址
+		producer.setNamesrvAddr("192.168.43.51:9876");
+		producer.start();
+		//循环中不断发送消息
+	}
+	
+}

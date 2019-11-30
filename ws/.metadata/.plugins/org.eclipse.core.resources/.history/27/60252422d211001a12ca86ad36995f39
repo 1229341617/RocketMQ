@@ -1,0 +1,12 @@
+package com.limao.rocketmq.proconsumer;
+
+import org.apache.rocketmq.client.consumer.DefaultMQPullConsumer;
+
+public class Consumer {
+	
+	public static void main(String[] args) {
+		DefaultMQPullConsumer consumer = new DefaultMQPullConsumer("test_consumer");
+		
+	}
+	
+}
