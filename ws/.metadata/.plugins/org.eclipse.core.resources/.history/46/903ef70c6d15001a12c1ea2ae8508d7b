@@ -1,0 +1,31 @@
+package com.limao.rocketmq.makeorder;
+
+import org.apache.rocketmq.client.exception.MQClientException;
+import org.apache.rocketmq.client.producer.DefaultMQProducer;
+import org.apache.rocketmq.client.producer.SendResult;
+import org.apache.rocketmq.common.message.Message;
+import org.apache.rocketmq.remoting.common.RemotingHelper;
+
+public class RocketMQProducer {
+	
+	public static DefaultMQProducer producer;
+	
+	static {
+		try {
+			producer = new DefaultMQProducer("order_producer_group");
+			producer.setNamesrvAddr("localhost:8080");
+			producer.start();
+		} catch (MQClientException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void send(String topic, String message) throws Exception {
+		Message msg = new Message(topic, "", message.getBytes(RemotingHelper.DEFAULT_CHARSET));
+		SendResult sendResult = producer.send(msg);
+		System.out.println(sendResult);
+	}
+	
+	
+	
+}

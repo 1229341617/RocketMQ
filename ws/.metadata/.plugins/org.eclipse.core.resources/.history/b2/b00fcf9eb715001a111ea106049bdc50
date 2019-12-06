@@ -1,0 +1,19 @@
+package com.limao.rocketmq._03_proorconsmessage.product;
+
+import org.apache.rocketmq.client.producer.DefaultMQProducer;
+
+public class SyncMQProducer {
+	private static DefaultMQProducer syncProducer;
+	
+	static {
+		try {
+			syncProducer = new DefaultMQProducer("order_producer_group");
+			syncProducer.setNamesrvAddr("locahost:8080");
+			syncProducer.start();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+}

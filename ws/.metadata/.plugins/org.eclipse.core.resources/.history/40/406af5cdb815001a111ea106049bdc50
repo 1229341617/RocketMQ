@@ -1,0 +1,16 @@
+package com.limao.rocketmq._03_proorconsmessage.product;
+
+import org.apache.rocketmq.client.producer.DefaultMQProducer;
+
+public class AsyncMQProducer {
+	private static DefaultMQProducer asyncProducer;
+	
+	static {
+		asyncProducer = new DefaultMQProducer("order_producer_group");
+		asyncProducer.setNamesrvAddr("localhost:8080");
+		//异步发送失败时,重试的次数
+		asyncProducer.setRetryTimesWhenSendAsyncFailed(0);
+	}
+	
+	
+}

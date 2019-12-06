@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.apache.rocketmq.client.producer.DefaultMQProducer"/>
-<fullyQualifiedTypeName name="org.apache.rocketmq.common.message.Message"/>
 <fullyQualifiedTypeName name="org.apache.rocketmq.remoting.RemotingClient"/>
-<fullyQualifiedTypeName name="org.apache.rocketmq.remoting.common.RemotingHelper"/>
 <fullyQualifiedTypeName name="org.apache.rocketmq.client.producer.SendResult"/>
-<fullyQualifiedTypeName name="org.apache.rocketmq.client.consumer.DefaultMQPullConsumer"/>
+<fullyQualifiedTypeName name="org.apache.tomcat.jni.Thread"/>
+<fullyQualifiedTypeName name="org.apache.rocketmq.client.producer.DefaultMQProducer"/>
+<fullyQualifiedTypeName name="org.apache.rocketmq.remoting.common.RemotingHelper"/>
+<fullyQualifiedTypeName name="org.apache.rocketmq.common.message.Message"/>
+<fullyQualifiedTypeName name="org.apache.rocketmq.client.producer.SendCallback"/>
 <fullyQualifiedTypeName name="org.apache.rocketmq.client.consumer.DefaultMQPushConsumer"/>
+<fullyQualifiedTypeName name="org.apache.rocketmq.client.consumer.listener.MessageListener"/>
 <fullyQualifiedTypeName name="org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently"/>
 <fullyQualifiedTypeName name="org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus"/>
+<fullyQualifiedTypeName name="org.apache.rocketmq.client.consumer.DefaultMQPullConsumer"/>
 </qualifiedTypeNameHistroy>

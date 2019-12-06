@@ -1,0 +1,7 @@
+1575335917936	Delete element
+1575368460414	Rename type 'SyncProducer'
+1575368477334	Rename package 'com.limao.rocketmq.proconsumer'
+1575368484274	Rename package 'com.limao.rocketmq.makeorder'
+1575370822346	Delete element
+1575370888668	Rename field 'producdr'
+1575371022164	Rename type 'AsyncMQProducer'

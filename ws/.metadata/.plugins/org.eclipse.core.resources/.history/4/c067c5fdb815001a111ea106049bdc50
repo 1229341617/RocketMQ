@@ -1,0 +1,36 @@
+package com.limao.rocketmq._03_proorconsmessage.product;
+
+import org.apache.rocketmq.client.producer.DefaultMQProducer;
+import org.apache.rocketmq.client.producer.SendCallback;
+import org.apache.rocketmq.client.producer.SendResult;
+import org.apache.rocketmq.common.message.Message;
+import org.apache.rocketmq.remoting.common.RemotingHelper;
+
+public class AsyncMQProducer {
+	private static DefaultMQProducer asyncProducer;
+	
+	static {
+		asyncProducer = new DefaultMQProducer("order_producer_group");
+		asyncProducer.setNamesrvAddr("localhost:8080");
+		//异步发送失败时,重试的次数
+		asyncProducer.setRetryTimesWhenSendAsyncFailed(0);
+	}
+	
+	public static void send(String topic, String message) {
+		Message msg = new Message(topic,
+									"",
+									message.getBytes(RemotingHelper.DEFAULT_CHARSET));
+		asyncProducer.send(msg, new SendCallback() {
+			public void onSuccess(SendResult arg0) {
+				
+			}
+			
+			public void onException(Throwable arg0) {
+				
+			}
+		})；
+	}
+	
+	
+	
+}

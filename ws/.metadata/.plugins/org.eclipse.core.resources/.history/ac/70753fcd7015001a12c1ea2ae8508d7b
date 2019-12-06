@@ -1,0 +1,5 @@
+package com.limao.rocketmq.makeorder;
+
+public class RocketMQConsumer {
+
+}

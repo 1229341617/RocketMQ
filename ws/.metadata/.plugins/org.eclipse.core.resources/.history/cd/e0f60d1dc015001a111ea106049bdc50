@@ -1,0 +1,13 @@
+package com.limao.rocketmq._03_proorconsmessage.product;
+
+import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
+
+public class PushPullForMQConsumer {
+	public static void consumer(String topic) throws Exception {
+		DefaultMQPushConsumer pushMQConsumer = new DefaultMQPushConsumer("order_consumer_group");
+		pushMQConsumer.setNamesrvAddr("localhost:8080");
+		pushMQConsumer.subscribe(topic, "*");
+	}
+	
+	
+}

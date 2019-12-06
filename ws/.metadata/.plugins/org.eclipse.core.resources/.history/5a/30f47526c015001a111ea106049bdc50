@@ -1,0 +1,28 @@
+package com.limao.rocketmq._03_proorconsmessage.product;
+
+import java.util.List;
+
+import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
+import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
+import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
+import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
+import org.apache.rocketmq.common.message.MessageExt;
+
+public class PushPullForMQConsumer {
+	public static void consumer(String topic) throws Exception {
+		DefaultMQPushConsumer pushMQConsumer = new DefaultMQPushConsumer("order_consumer_group");
+		pushMQConsumer.setNamesrvAddr("localhost:8080");
+		pushMQConsumer.subscribe(topic, "*");
+		
+		pushMQConsumer.setMessageListener(new MessageListenerConcurrently() {
+			
+			public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> arg0, ConsumeConcurrentlyContext arg1) {
+				return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
+			}
+		});
+		
+		pushMQConsumer.start();
+	}
+	
+	
+}

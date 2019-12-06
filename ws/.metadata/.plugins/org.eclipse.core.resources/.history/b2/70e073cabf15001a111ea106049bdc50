@@ -1,0 +1,5 @@
+package com.limao.rocketmq._03_proorconsmessage.product;
+
+public class PushPullForMQConsumer {
+
+}
